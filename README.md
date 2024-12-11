@@ -553,3 +553,33 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"qc_getTransactionReceipt","param
   }
 }
 ```
+
+### GenerateWallet {#generatewallet}
+
+Creates new message call transaction or a contract creation for signed transactions.
+
+**Parameters**
+
+1. `EXCHANGE_NAME` - the name of the exchange
+2. `PUBLIC_KEY` - the public key of the exchange
+3. `NONCE` - the nonce of the exchange
+
+**Returns**
+
+`ADDRESS` - the address of the new wallet
+`PRIVATE_KEY` - A new private key for the exchange
+`PUBLIC_KEY` - A new public key for the exchange
+
+**Example**
+
+```js
+// Request
+curl -X POST --data '{"exchangeName": "coinstore","publicKey":"0x407d73d8a49eeb85d32cf465507dd71d507100c1","nonce": "0x1"}'
+
+// Result
+{
+  "address": "0x407d73d8a49eeb85d32cf465507dd71d507100c1",
+  "privateKey": "0x407d73d8a49eeb85d32cf465507dd71d507100c1",
+  "publicKey": "0x407d73d8a49eeb85d32cf465507dd71d507100c1"
+}
+```
